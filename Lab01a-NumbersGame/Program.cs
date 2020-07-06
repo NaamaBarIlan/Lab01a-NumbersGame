@@ -7,7 +7,9 @@ namespace Lab01a_NumbersGame
         static void Main(string[] args)
         {
 
-            GetQuotient(8);
+            //GetQuotient(8);
+            int[] myArray = { 1, 3, 5 };
+            GetProduct(myArray, 2);
             /*
             try
             {
@@ -44,8 +46,28 @@ namespace Lab01a_NumbersGame
         */
 
         //static int Populate(int )
+
         // GetSum Method
-        // GetProduct Method
+
+
+        static int GetProduct(int[] array, int sum)
+        {
+            // Ask the user the select a random number between 1 and the length of the integer array.
+            Console.WriteLine($"Select a random number between 1 and {array.Length}");
+
+            int randomNum = Convert.ToInt32(Console.ReadLine());
+
+            // Declare a new variable named product
+            int product;
+
+            // Multiply sum by the random number index that the user selected from the array
+            //(example: array[randomNumber]). Set this value to the product variable.
+            product = sum * array[randomNum];
+
+            Console.WriteLine($"product is {product}");
+            // Return the product variable.
+            return product;
+        }
 
 
         static decimal GetQuotient(int product)
