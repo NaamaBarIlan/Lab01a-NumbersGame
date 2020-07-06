@@ -8,7 +8,18 @@ namespace Lab01a_NumbersGame
         {
 
             //GetQuotient(8);
-            int[] myArray = { 1, 3, 5 };
+            int[] myArray = { 1, 3, 5};
+
+            try
+            {
+                GetSum(myArray);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"Exception caught in Main: {e.Message}");
+            }
+            
+            /*
             try
             {
                 GetProduct(myArray, 2);
@@ -17,6 +28,7 @@ namespace Lab01a_NumbersGame
             {
                 Console.WriteLine($"Exception caught in Main: {e.Message}");
             }
+            */
             /*
             try
             {
@@ -54,7 +66,30 @@ namespace Lab01a_NumbersGame
 
         //static int Populate(int )
 
-        // GetSum Method
+        static int GetSum(int[] array)
+        {
+            // Declare an integer variable named sum
+            int sum = 0;
+
+            // Iterate through the array and populate the sum variable 
+            // with the sum of all the numbers together.
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+
+            // Add the capability to throw a custom exception if the sum is less than 20, 
+            // with the message “Value of { sum} is too low”. 
+            //(replace { sum} with the actual sum of the variable).
+            if (sum < 20)
+            {
+                throw new Exception($"Value of {sum} is too low");
+            }
+
+            // return the sum.
+            Console.WriteLine($"sum is: {sum}");
+            return sum;
+        }
 
 
         static int GetProduct(int[] array, int sum)
