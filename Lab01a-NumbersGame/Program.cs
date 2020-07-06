@@ -50,20 +50,35 @@ namespace Lab01a_NumbersGame
 
         static decimal GetQuotient(int product)
         {
+            try
+            {
             //Prompt the user to enter a number to divide the product by. 
             //Display the current product to the user during this prompt.
             Console.WriteLine($"Enter a number to divide the {product} by");
 
             // Retrieve the input and divide the inputted number by the product.
-            int userNum1 = Convert.ToInt32(Console.ReadLine());
+            decimal inputNum1 = Convert.ToDecimal(Console.ReadLine());
+            decimal dividend = Convert.ToDecimal(product) / inputNum1;
 
             //Utilize the decimal.Divide() method to divide the product by the dividend to receive the quotient.
-            decimal dividedNum = userNum1 / product;
-            Console.WriteLine($"divided number is {dividedNum}");
+            decimal quotient = decimal.Divide(product, dividend);
+
+            Console.WriteLine($"divided number is {dividend}");
+            Console.WriteLine($"quotient number is {quotient}");
 
             // Return the quotient
-            return dividedNum;
-            
+            return quotient;
+            }
+            //Expected Exceptions: Divide by Zero Exception
+            catch (DivideByZeroException e)
+            {
+                //Output the message to the console
+                Console.WriteLine("Sorry, you can't divide by zero");
+
+                //Return 0 if the catch gets called
+                return 0;
+            }
+
         }
 
     }
