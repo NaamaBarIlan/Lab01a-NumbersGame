@@ -9,7 +9,14 @@ namespace Lab01a_NumbersGame
 
             //GetQuotient(8);
             int[] myArray = { 1, 3, 5 };
-            GetProduct(myArray, 2);
+            try
+            {
+                GetProduct(myArray, 2);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception caught in Main: {e.Message}");
+            }
             /*
             try
             {
@@ -52,6 +59,8 @@ namespace Lab01a_NumbersGame
 
         static int GetProduct(int[] array, int sum)
         {
+            try
+            {
             // Ask the user the select a random number between 1 and the length of the integer array.
             Console.WriteLine($"Select a random number between 1 and {array.Length}");
 
@@ -67,6 +76,15 @@ namespace Lab01a_NumbersGame
             Console.WriteLine($"product is {product}");
             // Return the product variable.
             return product;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                //Output the message to the console.
+                Console.WriteLine(e.Message);
+
+                //throw it back down the callstack so that it displays within Main
+                throw;
+            }
         }
 
 
