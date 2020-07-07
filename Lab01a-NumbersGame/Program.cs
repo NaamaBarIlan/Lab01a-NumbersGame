@@ -7,8 +7,13 @@ namespace Lab01a_NumbersGame
         static void Main(string[] args)
         {
 
+            int[] myArray = new int[5];
+            //Populate(myArray);
+
             //GetQuotient(8);
-            int[] myArray = { 1, 3, 5};
+            /*
+            
+
 
             try
             {
@@ -18,7 +23,8 @@ namespace Lab01a_NumbersGame
             {
                 Console.WriteLine($"Exception caught in Main: {e.Message}");
             }
-            
+            */
+
             /*
             try
             {
@@ -51,7 +57,7 @@ namespace Lab01a_NumbersGame
 
         }
 
-        /*
+        
         static void StartSequence()
         {
             Console.WriteLine("Enter a number greater than zero");
@@ -62,9 +68,30 @@ namespace Lab01a_NumbersGame
 
            
         }
-        */
+    
 
-        //static int Populate(int )
+        static int[] Populate(int[] array)
+        {
+            // Iterate through the array and prompt the user to enter a specific number.
+            for (int i = 0; i < array.Length; i++)
+            {
+                // Example: “Please enter a number 1 / 6” (indicate to the user what number they are inputting)
+                Console.WriteLine($"Enter a number {i + 1} / {array.Length}");
+
+                // Utilize the Convert.ToInt32 method to convert the user’s input to an integer
+                // (Remember not to directly manipulate the user’s input.Store the response into a string first).
+                string userInput = Console.ReadLine();
+                int arrayElement = Convert.ToInt32(userInput);
+
+                // Add the number just inputted into the array.
+                // Repeat this process until all numbers have been requested and the array is filled.
+                array[i] = arrayElement;
+            }
+            
+            //Return the populated array
+            //Console.WriteLine(array[0]);
+            return array;
+        }
 
         static int GetSum(int[] array)
         {
