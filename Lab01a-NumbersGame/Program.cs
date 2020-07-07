@@ -7,41 +7,9 @@ namespace Lab01a_NumbersGame
         static void Main(string[] args)
         {
 
-            int[] myArray = new int[5];
-            //Populate(myArray);
-
-            //GetQuotient(8);
-            /*
-            
-
-
             try
             {
-                GetSum(myArray);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine($"Exception caught in Main: {e.Message}");
-            }
-            */
-
-            /*
-            try
-            {
-                GetProduct(myArray, 2);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Exception caught in Main: {e.Message}");
-            }
-            */
-            /*
-            try
-            {
-                // The logic within this method should:
-                Call the StartSequence() method from Main
-
-
+                //Call the StartSequence() method from Main
                 StartSequence();
             }
             catch (Exception e)
@@ -51,24 +19,67 @@ namespace Lab01a_NumbersGame
             }
             finally
             {
-                Console.WriteLine("The program is now complete");
+                Console.WriteLine("The program is now complete.");
             }
-            */
 
         }
 
-        
+
         static void StartSequence()
         {
-            Console.WriteLine("Enter a number greater than zero");
+            try
+            {
+                Console.WriteLine("Welcome to my game! Let's do some math!");
 
-            int userInput = Convert.ToInt32(Console.ReadLine());
+                // prompt the user to “Enter a number greater than zero”
 
-            int[] myArray = new int[userInput];
+                Console.WriteLine("Please enter a number greater than zero");
 
-           
+                // Utilize the Convert.ToInt32() method to convert the user’s input to an integer
+                string userInput = Console.ReadLine();
+                int userNumber = Convert.ToInt32(userInput);
+
+                // Instantiate a new integer array that is the size the user just inputted
+
+                int[] array = new int[userNumber];
+
+                //Call the Populate method. arguments: integer array
+                Populate(array);
+
+                //Capture the sum by calling the GetSum method. arguments: integer array
+                int sum = GetSum(array);
+                
+                // Capture the product by calling the GetProduct method. integer array and integer sum
+                int product = GetProduct(array, sum);
+
+                // Capture the quotient by calling the GetQuotient method. arguments: integer product
+                GetQuotient(product);
+
+                // To complete the method, output to the console the details of all these values. 
+                // Make sure that your output contains the same information presented in the example. 
+                //Pay attention to line breaks!
+                Console.WriteLine($"Your array is size: {userInput}");
+
+                // TODO complete the array output 
+                //for (int i = 0; i < array.Length; i++){}
+                //Console.WriteLine($"The numbers in the array are: ");
+                Console.WriteLine($"The sum of the array is {sum}");
+                Console.WriteLine($"{sum} * {product / sum} = {product}");
+
+                //TODO complete the product / quotient = result 
+                //Console.WriteLine($"{product} / {} = {}");
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine($"Exception caught in Main: {e.Message}");
+            }
+            catch(OverflowException e)
+            {
+                Console.WriteLine($"Exception caught in Main: {e.Message}");
+            }
+
         }
-    
+
 
         static int[] Populate(int[] array)
         {
@@ -76,7 +87,7 @@ namespace Lab01a_NumbersGame
             for (int i = 0; i < array.Length; i++)
             {
                 // Example: “Please enter a number 1 / 6” (indicate to the user what number they are inputting)
-                Console.WriteLine($"Enter a number {i + 1} / {array.Length}");
+                Console.WriteLine($"Please enter a number {i + 1} / {array.Length}");
 
                 // Utilize the Convert.ToInt32 method to convert the user’s input to an integer
                 // (Remember not to directly manipulate the user’s input.Store the response into a string first).
@@ -114,7 +125,7 @@ namespace Lab01a_NumbersGame
             }
 
             // return the sum.
-            Console.WriteLine($"sum is: {sum}");
+            //Console.WriteLine($"sum is: {sum}");
             return sum;
         }
 
@@ -124,7 +135,7 @@ namespace Lab01a_NumbersGame
             try
             {
             // Ask the user the select a random number between 1 and the length of the integer array.
-            Console.WriteLine($"Select a random number between 1 and {array.Length}");
+            Console.WriteLine($"Please select a random number between 1 and {array.Length}");
 
             int randomNum = Convert.ToInt32(Console.ReadLine());
 
@@ -135,7 +146,7 @@ namespace Lab01a_NumbersGame
             //(example: array[randomNumber]). Set this value to the product variable.
             product = sum * array[randomNum];
 
-            Console.WriteLine($"product is {product}");
+            //Console.WriteLine($"product is {product}");
             // Return the product variable.
             return product;
             }
@@ -156,7 +167,7 @@ namespace Lab01a_NumbersGame
             {
             //Prompt the user to enter a number to divide the product by. 
             //Display the current product to the user during this prompt.
-            Console.WriteLine($"Enter a number to divide the {product} by");
+            Console.WriteLine($"Please enter a number to divide your product {product} by");
 
             // Retrieve the input and divide the inputted number by the product.
             decimal inputNum1 = Convert.ToDecimal(Console.ReadLine());
@@ -165,8 +176,8 @@ namespace Lab01a_NumbersGame
             //Utilize the decimal.Divide() method to divide the product by the dividend to receive the quotient.
             decimal quotient = decimal.Divide(product, dividend);
 
-            Console.WriteLine($"divided number is {dividend}");
-            Console.WriteLine($"quotient number is {quotient}");
+            //Console.WriteLine($"divided number is {dividend}");
+            //Console.WriteLine($"quotient number is {quotient}");
 
             // Return the quotient
             return quotient;
