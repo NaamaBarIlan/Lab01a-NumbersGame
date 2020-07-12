@@ -3,7 +3,7 @@
 namespace Lab01a_NumbersGame
 {
     /// <summary>
-    /// This method the StartSequence() method 
+    /// This method calls the StartSequence() method 
     /// </summary>
     class Program
     {
