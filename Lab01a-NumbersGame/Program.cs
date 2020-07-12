@@ -164,14 +164,14 @@ namespace Lab01a_NumbersGame
         {
             try
             {
-            Console.WriteLine($"Please enter a number to divide your product {product} by");
+                Console.WriteLine($"Please enter a number to divide your product {product} by");
 
-            decimal inputNum1 = Convert.ToDecimal(Console.ReadLine());
-            decimal dividend = Convert.ToDecimal(product) / inputNum1;
+                decimal inputNum1 = Convert.ToDecimal(Console.ReadLine());
+                decimal dividend = Convert.ToDecimal(product) / inputNum1;
 
-            decimal quotient = decimal.Divide(product, dividend);
+                decimal quotient = decimal.Divide(product, dividend);
 
-            return quotient;
+                return quotient;
             }
             catch (DivideByZeroException e)
             {
