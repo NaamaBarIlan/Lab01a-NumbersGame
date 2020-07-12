@@ -39,7 +39,7 @@ Then select and open ```Lab01a-NumbersGame.sln```
 #### Using the Application
 ![Image 1](https://github.com/NaamaBarIlan/Lab01a-NumbersGame/blob/master/img/lab01a-using.png)
 #### Application End
-![Image 1](https://github.com/NaamaBarIlan/Lab01a-NumbersGame/blob/master/img/lab01a-end.pngg)
+![Image 1](https://github.com/NaamaBarIlan/Lab01a-NumbersGame/blob/master/img/lab01a-end.png)
 
 ---
 
