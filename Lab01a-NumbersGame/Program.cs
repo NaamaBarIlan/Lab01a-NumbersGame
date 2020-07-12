@@ -17,7 +17,8 @@ namespace Lab01a_NumbersGame
             catch (Exception e)
             {
 
-                Console.WriteLine($"Sorry, exception caught in Main: {e.Message}");
+                Console.WriteLine($"An exception in Main has been caught");
+                Console.WriteLine(e.Message);
             }
             finally
             {
@@ -41,32 +42,25 @@ namespace Lab01a_NumbersGame
             try
             {
                 Console.WriteLine("Welcome to my game! Let's do some math!");
-
                 Console.WriteLine("Please enter a number greater than zero");
 
                 string userInput = Console.ReadLine();
                 int userNumber = Convert.ToInt32(userInput);
 
-                int[] array = new int[userNumber];
+                int[] numbersArray = new int[userNumber];
+                numbersArray = Populate(numbersArray);
 
-                Populate(array);
-
-                int sum = GetSum(array);
+                int sum = GetSum(numbersArray);
                 
-                int product = GetProduct(array, sum);
+                int product = GetProduct(numbersArray, sum);
 
-                GetQuotient(product);
+                decimal quotient = GetQuotient(product);
 
                 Console.WriteLine($"Your array is size: {userInput}");
-
-                // TODO complete the array output 
-                //for (int i = 0; i < array.Length; i++){}
-                //Console.WriteLine($"The numbers in the array are: ");
+                Console.WriteLine($"The numbers in the array are: {string.Join(',', numbersArray)}");
                 Console.WriteLine($"The sum of the array is {sum}");
                 Console.WriteLine($"{sum} * {product / sum} = {product}");
-
-                //TODO complete the product / quotient = result 
-                //Console.WriteLine($"{product} / {} = {}");
+                Console.WriteLine($"{product} / {product / quotient} = {quotient}");
             }
             catch(FormatException e)
             {
