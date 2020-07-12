@@ -1,6 +1,6 @@
 # Lab: 01a - Exception Handling & Debugging
 
-## About Me Quiz
+## Numbers Game
 
 Lab01-Exception-Handling
 
