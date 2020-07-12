@@ -134,15 +134,15 @@ namespace Lab01a_NumbersGame
         {
             try
             {
-            Console.WriteLine($"Please select a random number between 1 and {array.Length}");
+                Console.WriteLine($"Please select a random number between 1 and {array.Length}");
 
-            int randomNum = Convert.ToInt32(Console.ReadLine());
+                int randomNum = Convert.ToInt32(Console.ReadLine());
 
-            int product;
+                int product;
 
-            product = sum * array[randomNum];
+                product = sum * array[randomNum];
 
-            return product;
+                return product;
             }
             catch (IndexOutOfRangeException e)
             {
