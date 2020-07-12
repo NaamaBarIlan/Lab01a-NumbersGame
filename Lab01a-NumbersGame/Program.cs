@@ -16,8 +16,8 @@ namespace Lab01a_NumbersGame
             }
             catch (Exception e)
             {
-
                 Console.WriteLine($"An exception in Main has been caught");
+
                 Console.WriteLine(e.Message);
             }
             finally
