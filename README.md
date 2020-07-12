@@ -35,11 +35,11 @@ Then select and open ```Lab01a-NumbersGame.sln```
 ### Visuals
 
 #### Application Start
-![Image 1](\img\lab01a-start.png)
+![Image 1](https://github.com/NaamaBarIlan/Lab01a-NumbersGame/blob/master/img/lab01a-start.png)
 #### Using the Application
-![Image 1](\img\lab01a-using.png)
+![Image 1](https://github.com/NaamaBarIlan/Lab01a-NumbersGame/blob/master/img/lab01a-using.png)
 #### Application End
-![Image 1](\img\lab01a-end.png)
+![Image 1](https://github.com/NaamaBarIlan/Lab01a-NumbersGame/blob/master/img/lab01a-end.pngg)
 
 ---
 
