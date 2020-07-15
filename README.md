@@ -45,6 +45,8 @@ Then select and open ```Lab01a-NumbersGame.sln```
 
 ### Change Log
 
+1.2: *Fixed the GetProduct method so a user can select the last index value and updated summary notes* - 15 Jul 2020
+
 1.1: *Fixed StartSequence and GetProduct methods, added summary note tags, fixed try block formatting, updated README* - 12 Jul 2020  
 
 

@@ -80,8 +80,8 @@ namespace Lab01a_NumbersGame
         /// Repeat this process until all numbers have been requested and the array is filled
         /// Return the populated array
         /// </summary>
-        /// <param name="array">An int array</param>
-        /// <returns>an int array</returns>
+        /// <param name="array">An empty int array</param>
+        /// <returns>An int array populated with the converted user input</returns>
         static int[] Populate(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
@@ -103,8 +103,8 @@ namespace Lab01a_NumbersGame
         /// Returns the sum
         /// It has the capability to throw a custom exception if the sum is less than 20
         /// </summary>
-        /// <param name="array">An int array</param>
-        /// <returns>An int</returns>
+        /// <param name="array">The int array that was populated using the Populate method</param>
+        /// <returns>An int that is the sum of all the numbers in the input array</returns>
         static int GetSum(int[] array)
         {
             int sum = 0;
@@ -127,20 +127,21 @@ namespace Lab01a_NumbersGame
         /// Multiplies sum by the random number index that the user selected from the array
         /// Return the product variable.
         /// </summary>
-        /// <param name="array">An int array</param>
-        /// <param name="sum">An int</param>
-        /// <returns>An int</returns>
+        /// <param name="array">The int array that was populated using the Populate method</param>
+        /// <param name="sum">An int sum of all the numbers in the input array, calculated in the Sum method</param>
+        /// <returns>An int that is the product of the input sum and the length of the input array</returns>
         static int GetProduct(int[] array, int sum)
         {
             try
             {
                 Console.WriteLine($"Please select a random number between 1 and {array.Length}");
 
-                int randomNum = Convert.ToInt32(Console.ReadLine());
+                string userInput = Console.ReadLine();
+                int randomNum = Convert.ToInt32(userInput);
 
                 int product;
 
-                product = sum * array[randomNum];
+                product = sum * array[randomNum - 1];
 
                 return product;
             }
@@ -158,8 +159,8 @@ namespace Lab01a_NumbersGame
         /// Utilizes the decimal.Divide() method to divide the product by the dividend to receive the quotient.
         /// Returns the quotient
         /// </summary>
-        /// <param name="product">An int</param>
-        /// <returns>A decimal</returns>
+        /// <param name="product">An int that is the product of an input sum and the length of the input array calculated in the GetProduct method</param>
+        /// <returns>A decimal that is the quotient, the result of dividing the product param with the user input number</returns>
         static decimal GetQuotient(int product)
         {
             try
