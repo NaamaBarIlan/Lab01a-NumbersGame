@@ -2,9 +2,6 @@
 
 namespace Lab01a_NumbersGame
 {
-    /// <summary>
-    /// This method calls the StartSequence() method 
-    /// </summary>
     class Program
     {
         static void Main(string[] args)
